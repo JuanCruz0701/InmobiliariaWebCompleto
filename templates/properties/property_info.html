@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ property.name }}</title>
+</head>
+<body>
+    <h1>{{ property.name }}</h1>
+    <p>{{ property.description }}</p>
+    <p>{{ property.street }}</p>
+    <p>{{ property.colony }}</p>
+    <p>{{ property.postal_code }}</p>
+    <p>{{ property.external_number }}</p>
+    <p>{{ property.price }}</p>
+    <p>{{ property.type }}</p>
+    <p>{{ property.wide }}</p>
+    <p>{{ property.long }}</p>
+    <p>{{ property.ranking }}</p>
+    <p>{{ property.image.url }}</p>
+    <p>{{ property.owner }}</p>
+    <form method="post" action="{% url 'buy_property' property.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Comprar propiedad">
+    </form>
+</body>
+</html>
+
+
+
+
+
